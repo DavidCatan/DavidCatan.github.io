@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+    <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
+    <script src="http://code.jquery.com/ui/1.13.3/jquery-ui.js" ></script>
+    <script type="json" src="catList.json"></script>
+
+</head>
+<body>
+    <img id="logo" src="images/site_logo.png" alt="logo">
+    <div class="inputDiv" id="inputDiv">
+        <p id="inputBlock">
+            <input type="text" id="catInput" name="cat" size="10" placeholder= "Enter a Cat"/>
+            <input type="submit" id="submitBtn" />
+        </p>
+    </div>
+    <p id="time"></p>
+    <div class="hint">
+        <input id="descHint" type="hidden" value="Description click to reveal"/>
+        <textarea readonly id="desc" style="display: none;"></textarea>
+    </div>
+    <div class="tableDiv">
+        <br>
+        <table id="table" class="table" cellspacing="10" cellpadding="5"> 
+            <tr id="row"><th id="nameCell">Cat</th><th style="border:1px solid white">Rarity</th>
+            <th style="border:1px solid white">Cost</th><th style="border:1px solid white">Range</th>
+            <th style="border:1px solid white">Target</th><th id="traitCell" style="border:1px solid white;">Trait</th>
+            <th style="border:1px solid white; width: 165px;">Ability</th><th style="border:1px solid white">Form</th></tr>
+        </table>
+    </div>
+    <div class="rulesDiv">
+        <div class="speechDiv">
+            <input id="rulesBtn" type="button" value="Rules">
+        </div>
+        <img id="gamatoto" src="images/Gamatoto.png" alte="Gamatoto">
+    </div>
+    <div class="popup" id="popup">
+        <ul id="rules">
+            <li>Welcome to The Wordle Cats! The object of this game is to guess the randomly chosen battle cat in the least amount of tries</li>
+            <br>
+            <li>After you submit a cat, the background of each stat will fill in to give you a hint on what the answer is</li>
+            <br>
+            <ul>
+                <li>A green background means that the stats of your guess are identical to the answer</li>
+                <br>
+                <li>A yellow background means that the two share some commonalities (eg: kai and nurse share the floating trait, but not black)</li>
+                <br>
+                <li>A red background means no part of the stat is identical, but arrows on the range and cost will show you if the answer is higher or lower</li>
+            </ul>
+            <br>
+            <li>Additionally, an optional hint will appear after ten guesses that you can click to see the description of target cat</li>
+            <br>
+            <li>Finally, thank you for playing and have fun!</li>
+        </ul>
+        <input type="button" id="okBtn" value="Ok">
+    </div>
+    
+
+    <script src="app.js" type="Module"></script>
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>

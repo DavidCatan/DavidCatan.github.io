@@ -13,9 +13,6 @@ var nameSet = new Set(); // set of names to check guesses with
 var catData;
 var randomCat;
 
-const wsPort = 3000;
-const wsHostname = 'localhost';
-
 await fetch('catList.json')
     .then(response => response.json())
     .then(catList => {
@@ -24,35 +21,14 @@ await fetch('catList.json')
             nameSource.push(catData[key].data.name);
             nameSet.add(catData[key].data.name);
         }
-        //randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
+        randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
         console.log("catData...Done");
-        //console.log(randomCat);
+        console.log(randomCat);
         console.log(nameSource.length);
     })
     .catch(error => {
         console.error('Error:', error);
 });
-
-
-const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-};
-
-const ws = new WebSocket(`http://${wsHostname}:${wsPort}`);
-
-// start socket
-ws.onopen = () => {
-  console.log('ws opened on browser')
-}
-
-// update random cat when message received from server
-ws.onmessage = (message) => {
-    console.log(`message received`, message.data)
-    randomCat = nameSource[message.data];
-    console.log(randomCat);
-}
-
-await sleep(100); // makes client wait for websocket to start, not the best solution
 
 const submitText = document.getElementById("submitBtn");
 const inputText = document.getElementById("catInput");
@@ -87,55 +63,13 @@ var numGuesses = 0;
 var guesses = new Set();
 var descHidden = true;
 
-/* 
-    start date for next quiz
-    source: https://github.com/cxhuy/terradle-web/blob/main/src/lib/components/weaponQuiz/gameResult.svelte
-*/
-var date = new Date();
-console.log((date));
-var midnight = new Date(date);
-midnight.setHours(24, 0, 0, 0);
 
-var timeDiff = midnight.getTime() - date.getTime();
-var nextQuiz = [
-    Math.floor(timeDiff / (1000 * 60 * 60))
-        .toString()
-        .padStart(2, "0"),
-    Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
-        .toString()
-        .padStart(2, "0"),
-    Math.floor((timeDiff % (1000 * 60)) / 1000)
-        .toString()
-        .padStart(2, "0"),
-];
-
-remainingTime.innerHTML = "Next Quiz in " + nextQuiz.join(":");
-
-
-//session date
-//localStorage.removeItem("sessionDate");
-
-// reset guesses if year-month-day is equal
-
-if(localStorage.getItem("sessionDate") != date.getDate()){ 
-    localStorage.removeItem("sessionDate");
-    localStorage.removeItem("guesses"); 
-}
-
-console.log("before " + localStorage.getItem("sessionDate"));
-
-localStorage.setItem("sessionDate", date.getDate()); // update to current date
-
-console.log(localStorage.getItem("sessionDate"));
-
-
-
-//localStorage.removeItem("guesses");
-console.log(JSON.parse(localStorage.getItem("guesses")));
+//sessionStorage.removeItem("guesses");
+console.log(JSON.parse(sessionStorage.getItem("guesses")));
 
 // local storage restoring page
-if(localStorage.getItem("guesses") != null){
-    JSON.parse(localStorage.getItem("guesses")).forEach(
+if(sessionStorage.getItem("guesses") != null){
+    JSON.parse(sessionStorage.getItem("guesses")).forEach(
         (guess) => {
             guesses.add(guess);
             numGuesses++;
@@ -146,13 +80,12 @@ if(localStorage.getItem("guesses") != null){
         }
     );
     // show end screen if player loads in after winning
-    if(localStorage.getItem("guesses").includes(randomCat)){
+    if(sessionStorage.getItem("guesses").includes(randomCat)){
         endScreen();
     }
 }
 
 console.log(guesses);
-
 
 // enter data when pressing enter
 inputText.onkeyup = function(e){
@@ -190,7 +123,7 @@ function getInput() {
         return;
     }
     guesses.add(guess);
-    localStorage.setItem("guesses", (JSON.stringify(Array.from(guesses))));
+    sessionStorage.setItem("guesses", (JSON.stringify(Array.from(guesses))));
     numGuesses++;
     updateTable(guess);
     inputText.value='';
@@ -420,8 +353,7 @@ function compareArray(key, other){
 function endScreen() {
     let inputDiv = document.getElementById("inputDiv");
     inputDiv.remove();
-    console.log(remainingTime.innerHTML);
-    remainingTime.style.display = "block";
+    sessionStorage.removeItem("guesses");
 }
 
 
@@ -461,31 +393,3 @@ function animateYellow(cell){
         width: CELL_WIDTH
       }, 1000 );
 }
-
-
-/* 
-    update date for next quiz 
-    source: https://github.com/cxhuy/terradle-web/blob/main/src/lib/components/weaponQuiz/gameResult.svelte
-*/
-function updateTime(){
-    date = new Date();
-
-    midnight = new Date(date);
-    midnight.setHours(24, 0, 0, 0);
-
-    timeDiff = midnight.getTime() - date.getTime();
-    nextQuiz = [
-            Math.floor(timeDiff / (1000 * 60 * 60))
-                .toString()
-                .padStart(2, "0"),
-            Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
-                .toString()
-                .padStart(2, "0"),
-            Math.floor((timeDiff % (1000 * 60)) / 1000)
-                .toString()
-                .padStart(2, "0"),
-    ];
-    remainingTime.innerHTML = "Next Quiz in " + nextQuiz.join(":");
-}
-
-setInterval(updateTime, 1000); // update time every second

@@ -1,12 +1,3 @@
-'use strict';
-/*
-    Add win screen, update page accordingly -> pretty much done
-    animation to coloring -> pretty much done
-    check json vs javascript storage for cats
-    ---------------------------------------
-    Data to add:
-
-*/
 var nameSource = new Array(); // source of names
 var nameSet = new Set(); // set of names to check guesses with
 
@@ -22,12 +13,10 @@ await fetch('catList.json')
             nameSet.add(catData[key].data.name);
         }
         randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
-        console.log("catData...Done");
-        console.log(randomCat);
-        console.log(nameSource.length);
     })
     .catch(error => {
-        console.error('Error:', error);
+        alert(error + "\nThere was an error in fetching data for " + randomCat + ". Please refresh the page and try again");
+        localStorage.clear();
 });
 
 const submitText = document.getElementById("submitBtn");
@@ -67,16 +56,11 @@ var guesses = new Set();
 var descHidden = true;
 var media = window.matchMedia("(max-width: 480px)");
 
-//localStorage.removeItem("guesses");
-console.log(JSON.parse(localStorage.getItem("guesses")));
-
 if(localStorage.getItem("guesses") == null){
     localStorage.setItem("answer", randomCat);
 }
 
 randomCat = localStorage.getItem("answer"); // keep same answer after page refresh
-console.log("the true answer " + randomCat);
-console.log(guesses);
 
 // local storage restoring page
 if(localStorage.getItem("guesses") != null){
@@ -143,7 +127,7 @@ function getInput() {
             alert("Amazing! Stupdendous! You got the correct answer in only 1 guess");
         }
         else{
-            alert("You win! It took you " + numGuesses + " guesses"); // if in 1 guess: amazing! stupendous!
+            alert("You win! It took you " + numGuesses + " guesses"); 
         }
         endScreen();
     }
@@ -171,130 +155,169 @@ function updateTable(guess) {
     $(cells).fadeIn(500);
 
     // cat image
-    let catImg = document.createElement('img');
-    catImg.src = "images/" + guess + ".webp";
-    catImg.alt = guess;
-    catImg.style.width = "70%";
-    catImg.style.display = "block";
-    catImg.style.margin = "0 auto";
-    cell1.appendChild(catImg);
+    try {
+        let catImg = document.createElement('img');
+        catImg.src = "images/" + guess + ".webp";
+        catImg.alt = guess;
+        catImg.style.width = "70%";
+        catImg.style.display = "block";
+        catImg.style.margin = "0 auto";
+        cell1.appendChild(catImg);
+    }
+    catch{
+        alert("There was an error fetching image data for " + guess);
+    }
 
 
     
 
     // rarity
-    cells[0].innerHTML = catData[guess].data.rarity;
-    rarityClue = getRarityClue(catData[guess].data.rarity, catData[randomCat].data.rarity);
-    if (rarityClue){
-        animateGreen(cells[0]);
+    try{
+        cells[0].innerHTML = catData[guess].data.rarity;
+        rarityClue = getRarityClue(catData[guess].data.rarity, catData[randomCat].data.rarity);
+        if (rarityClue){
+            animateGreen(cells[0]);
+        }
+        else {
+            animateRed(cells[0]);
+        }
     }
-    else {
-        animateRed(cells[0]);
+    catch{
+        alert("There was an error fetching rarity data for " + guess);
     }
-
     
-
     // cost
-    cells[1].innerHTML = catData[guess].data.cost + "¢";
-    costClue = getCostClue(catData[guess].data.cost, catData[randomCat].data.cost);
+    try{
+        cells[1].innerHTML = catData[guess].data.cost + "¢";
+        costClue = getCostClue(catData[guess].data.cost, catData[randomCat].data.cost);
 
-    if (costClue > 0){
-        animateRed(cells[1]);
-        cells[1].innerHTML += " ↑";
+        if (costClue > 0){
+            animateRed(cells[1]);
+            cells[1].innerHTML += " ↑";
 
+        }
+        else if (costClue < 0){
+            animateRed(cells[1]);
+            cells[1].innerHTML += " ↓";
+        }
+        else{
+            animateGreen(cells[1]);
+        }
     }
-    else if (costClue < 0){
-        animateRed(cells[1]);
-        cells[1].innerHTML += " ↓";
-    }
-    else{
-        animateGreen(cells[1]);
+    catch{
+        alert("There was an error fetching cost data for " + guess);
     }
 
     // range
-    cells[2].innerHTML = catData[guess].data.range;
-    rangeClue = getRangeClue(catData[guess].data.range, catData[randomCat].data.range)
-    if (rangeClue > 0){
-        animateRed(cells[2]);
+    try{
+        cells[2].innerHTML = catData[guess].data.range;
+        rangeClue = getRangeClue(catData[guess].data.range, catData[randomCat].data.range)
+        if (rangeClue > 0){
+            animateRed(cells[2]);
 
-        cells[2].innerHTML += " ↑";
+            cells[2].innerHTML += " ↑";
+        }
+        else if (rangeClue < 0){
+            animateRed(cells[2]);
+            cells[2].innerHTML += " ↓";
+        }
+        else{
+            animateGreen(cells[2]);
+        }
     }
-    else if (rangeClue < 0){
-        animateRed(cells[2]);
-        cells[2].innerHTML += " ↓";
+    catch{
+        alert("There was an error fetching range data for " + guess);
     }
-    else{
-        animateGreen(cells[2]);
-    }
+    
 
     // target
-    let targetImg = document.createElement('img');
-    targetImg.src = "images/" + catData[guess].data.target + ".webp"; 
-    targetImg.alt = catData[guess].data.target;
-    targetImg.style.width = "fit-contents";
-    targetImg.style.display = "block";
-    targetImg.style.margin = "0 auto";
-    cells[3].appendChild(targetImg);
+    try{
+        let targetImg = document.createElement('img');
+        targetImg.src = "images/" + catData[guess].data.target + ".webp"; 
+        targetImg.alt = catData[guess].data.target;
+        targetImg.style.width = "fit-contents";
+        targetImg.style.display = "block";
+        targetImg.style.margin = "0 auto";
+        cells[3].appendChild(targetImg);
 
-    targetClue = getTargetClue(catData[guess].data.target, catData[randomCat].data.target)
-    if (targetClue){
-       animateGreen(cells[3]);
+        targetClue = getTargetClue(catData[guess].data.target, catData[randomCat].data.target)
+        if (targetClue){
+        animateGreen(cells[3]);
+        }
+        else{
+            animateRed(cells[3]);
+        }
     }
-    else{
-        animateRed(cells[3]);
+    catch{
+        alert("There was an error fetching target data for " + guess);
     }
 
     // trait
-    for (let i = 0; i < catData[guess].data.trait.length; i++){
-        let traitImg = document.createElement('img');
-        traitImg.src = "images/" + catData[guess].data.trait[i] + ".webp"; 
-        traitImg.alt = catData[guess].data.trait[i];
-        traitImg.style.display = "in-line block";
-        traitImg.style.margin = "0 auto";
-        cells[4].appendChild(traitImg);
-    }
+    try{
+        for (let i = 0; i < catData[guess].data.trait.length; i++){
+            let traitImg = document.createElement('img');
+            traitImg.src = "images/" + catData[guess].data.trait[i] + ".webp"; 
+            traitImg.alt = catData[guess].data.trait[i];
+            traitImg.style.display = "in-line block";
+            traitImg.style.margin = "0 auto";
+            cells[4].appendChild(traitImg);
+        }
 
-    traitClue = getTraitClue(catData[guess].data.trait, catData[randomCat].data.trait);
-    if (traitClue == "complete"){
-        animateGreen(cells[4]);
+        traitClue = getTraitClue(catData[guess].data.trait, catData[randomCat].data.trait);
+        if (traitClue == "complete"){
+            animateGreen(cells[4]);
+        }
+        else if (traitClue == "partial"){
+            animateYellow(cells[4]);
+        }
+        else{
+            animateRed(cells[4]);
+        }
     }
-    else if (traitClue == "partial"){
-        animateYellow(cells[4]);
-    }
-    else{
-        animateRed(cells[4]);
+    catch{
+        alert("There was an error fetching trait data for " + guess);
     }
 
     // ability
-    for (let i = 0; i < catData[guess].data.ability.length; i++){
-        let abilityImg = document.createElement('img');
-        abilityImg.src = "images/" + catData[guess].data.ability[i] + ".webp"; 
-        abilityImg.alt = catData[guess].data.ability[i];
-        abilityImg.style.width = "fit-contents";
-        abilityImg.style.display = "in-line block"; 
-        abilityImg.style.margin = "0 auto";
-        cells[5].appendChild(abilityImg);
+    try{
+        for (let i = 0; i < catData[guess].data.ability.length; i++){
+            let abilityImg = document.createElement('img');
+            abilityImg.src = "images/" + catData[guess].data.ability[i] + ".webp"; 
+            abilityImg.alt = catData[guess].data.ability[i];
+            abilityImg.style.width = "fit-contents";
+            abilityImg.style.display = "in-line block"; 
+            abilityImg.style.margin = "0 auto";
+            cells[5].appendChild(abilityImg);
+        }
+    
+        abilityClue = getAbilityClue(catData[guess].data.ability, catData[randomCat].data.ability);
+        if (abilityClue == "complete"){
+        animateGreen(cells[5]);
+        }
+        else if (abilityClue == "partial"){
+            animateYellow(cells[5]);
+        }
+        else{
+            animateRed(cells[5]);
+        }
     }
-   
-    abilityClue = getAbilityClue(catData[guess].data.ability, catData[randomCat].data.ability);
-    if (abilityClue == "complete"){
-       animateGreen(cells[5]);
-    }
-    else if (abilityClue == "partial"){
-        animateYellow(cells[5]);
-    }
-    else{
-        animateRed(cells[5]);
+    catch{
+        alert("There was an error fetching ability data for " + guess);
     }
 
     // Form
-    cells[6].innerHTML = catData[guess].data.form;
-    formClue = getFormClue(catData[guess].data.form, catData[randomCat].data.form);
-    if (formClue){
-        animateGreen(cells[6]);
+    try{
+        cells[6].innerHTML = catData[guess].data.form;
+        formClue = getFormClue(catData[guess].data.form, catData[randomCat].data.form);
+        if (formClue){
+            animateGreen(cells[6]);
+        }
+        else {
+            animateRed(cells[6]);
+        }
     }
-    else {
-        animateRed(cells[6]);
+    catch{
+        alert("There was an error fetching form data for " + guess);
     }
 }
 

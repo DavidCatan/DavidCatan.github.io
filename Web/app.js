@@ -35,20 +35,23 @@ const inputText = document.getElementById("catInput");
 const descHint = document.getElementById("descHint");
 const rulesBtn = document.getElementById("rulesBtn");
 const okBtn = document.getElementById("okBtn");
+const newCatBtn = document.getElementById("newCatBtn");
+
 var desc = document.getElementById("desc");
 var popup = document.getElementById("popup");
 var table = document.getElementById("table"); 
 var remainingTime = document.getElementById("time");
 
-desc.value = catData[randomCat].data.description; // add desc
 
 submitText.addEventListener('click', getInput);
 descHint.addEventListener('click', showHint);
 rulesBtn.addEventListener('click', showRules);
 okBtn.addEventListener('click', hideRules);
+newCatBtn.addEventListener('click', reset);
 
 const ROW_SIZE = 7;
 const CELL_WIDTH = 80;
+const HINT_GUESSES = 7;
 
 var rarityClue;
 var costClue;
@@ -62,30 +65,38 @@ var guess;
 var numGuesses = 0;
 var guesses = new Set();
 var descHidden = true;
+var media = window.matchMedia("(max-width: 480px)");
 
+//localStorage.removeItem("guesses");
+console.log(JSON.parse(localStorage.getItem("guesses")));
 
-//sessionStorage.removeItem("guesses");
-console.log(JSON.parse(sessionStorage.getItem("guesses")));
+if(localStorage.getItem("guesses") == null){
+    localStorage.setItem("answer", randomCat);
+}
+
+randomCat = localStorage.getItem("answer"); // keep same answer after page refresh
+console.log("the true answer " + randomCat);
+console.log(guesses);
 
 // local storage restoring page
-if(sessionStorage.getItem("guesses") != null){
-    JSON.parse(sessionStorage.getItem("guesses")).forEach(
+if(localStorage.getItem("guesses") != null){
+    JSON.parse(localStorage.getItem("guesses")).forEach(
         (guess) => {
             guesses.add(guess);
             numGuesses++;
             updateTable(guess); //update table with previous guessses
-            if(numGuesses > 1){
+            if(numGuesses > HINT_GUESSES){
                 descHint.type = "button";
              } 
         }
     );
     // show end screen if player loads in after winning
-    if(sessionStorage.getItem("guesses").includes(randomCat)){
+    if(localStorage.getItem("guesses").includes(randomCat)){
         endScreen();
     }
 }
 
-console.log(guesses);
+desc.value = catData[randomCat].data.description; // add desc
 
 // enter data when pressing enter
 inputText.onkeyup = function(e){
@@ -123,7 +134,7 @@ function getInput() {
         return;
     }
     guesses.add(guess);
-    sessionStorage.setItem("guesses", (JSON.stringify(Array.from(guesses))));
+    localStorage.setItem("guesses", (JSON.stringify(Array.from(guesses))));
     numGuesses++;
     updateTable(guess);
     inputText.value='';
@@ -136,7 +147,7 @@ function getInput() {
         }
         endScreen();
     }
-    if(numGuesses > 1){
+    if(numGuesses > 6){
        descHint.type = "button";
     }
 }
@@ -167,6 +178,9 @@ function updateTable(guess) {
     catImg.style.display = "block";
     catImg.style.margin = "0 auto";
     cell1.appendChild(catImg);
+
+
+    
 
     // rarity
     cells[0].innerHTML = catData[guess].data.rarity;
@@ -350,10 +364,20 @@ function compareArray(key, other){
     return "None";
 }
 
+function reset() {
+    window.location.reload();
+}
+
 function endScreen() {
     let inputDiv = document.getElementById("inputDiv");
     inputDiv.remove();
-    sessionStorage.removeItem("guesses");
+    newCatBtn.type = "button";
+    descHint.style.display = "none";
+    if (descHidden){
+        desc.style.display = "block";
+        descHint.value = "Description";
+    }
+    localStorage.removeItem("guesses");
 }
 
 

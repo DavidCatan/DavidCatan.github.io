@@ -150,7 +150,7 @@
                 "cost": 600,
                 "range": 350,
                 "target": "Single",
-                "trait": "Alien",
+                "trait": ["Alien"],
                 "ability": ["Strong Against"],
                 "form": "True",
                 "description": "Every day is Leg Day. Mastered the Art of Leg.\nExceptional attack power and range.\nStrong against Aliens"
@@ -228,7 +228,7 @@
                 "cost": 975,
                 "range": 170,
                 "target": "Area",
-                "trait": "Angel",
+                "trait": ["Angel"],
                 "ability": ["Weaken"],
                 "form": "True",
                 "description": "It is said that it destroyed a city once\nwith its beams of light. Might\nweaken Angel attacks (Area Attack)"

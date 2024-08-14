@@ -21,16 +21,19 @@
         </p>
     </div>
     <div class="hint">
-        <input id="descHint" type="hidden" value="Description click to reveal"/>
+        <input id="descHint" type="hidden" value="Description (click to reveal)"/>
         <textarea readonly id="desc" style="display: none;"></textarea>
     </div>
-    <div class="tableDiv">
+    <div class="newCatDiv">
+        <input id="newCatBtn" type="hidden" value="Click for new cat"/>
+    </div>
+    <div class="tableDiv" style="overflow: auto;">
         <br>
-        <table id="table" class="table" cellspacing="10" cellpadding="5"> 
+        <table id="table" class="table" cellspacing="10" cellpadding="5" > 
             <tr id="row"><th id="nameCell">Cat</th><th style="border:1px solid white">Rarity</th>
-            <th style="border:1px solid white">Cost</th><th style="border:1px solid white">Range</th>
+            <th style="border:1px solid white; min-width: 65px;">Cost</th><th style="border:1px solid white">Range</th>
             <th style="border:1px solid white">Target</th><th id="traitCell" style="border:1px solid white;">Trait</th>
-            <th style="border:1px solid white; width: 165px;">Ability</th><th style="border:1px solid white">Form</th></tr>
+            <th style="border:1px solid white; width: 165px; min-width: 165px">Ability</th><th style="border:1px solid white">Form</th></tr>
         </table>
     </div>
     <div class="rulesDiv">
@@ -53,9 +56,9 @@
                 <li>A red background means no part of the stat is identical, but arrows on the range and cost will show you if the answer is higher or lower</li>
             </ul>
             <br>
-            <li>Additionally, an optional hint will appear after ten guesses that you can click to see the description of target cat</li>
+            <li>Additionally, an optional hint will appear after 7 guesses that you can click to see the description of target cat</li>
             <br>
-            <li>Finally, thank you for playing and have fun!</li>
+            <li>Finally, this game is heavily inspired the game Terradle by cxhuy</li>
         </ul>
         <input type="button" id="okBtn" value="Ok">
     </div>

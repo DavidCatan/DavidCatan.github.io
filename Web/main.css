@@ -136,7 +136,7 @@ table {
     color: white;
     border: 1px solid black;
     width: fit-content;
-    background-color: var(--orange);
+    background-color: slategray;
     border-radius: 10px;
     min-width: 70px;
 }
@@ -232,9 +232,44 @@ table {
     border-width: 3px;
 }
 
-/*#rules{
-   
-}*/
+@media (max-width: 1024px){
+    #logo{
+        width: 40%;
+    }
+    .inputDiv{
+        width: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #submitBtn{
+        float: right;
+        font-size: 17px;
+    }
+    table {
+        color: white;
+        font-size: 17px;
+        font-family: "Comic Sans";
+        border-spacing: 4px;
+        width: fit-content;
+    }    
+    #row{
+        font-size: 15px;
+    }
+    #gamatoto{
+        width: 20%;
+    }
+    .popup{
+        left: 0%;
+    }
+    #rules{
+        height: 150px;
+        font-size: 15px;
+        overflow: auto;
+    }
+    #okBtn{
+        width: 20%;
+    }
+}
 
 @media (max-width: 480px){
     #logo{
@@ -274,4 +309,3 @@ table {
         width: 20%;
     }
 }
-

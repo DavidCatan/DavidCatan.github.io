@@ -54,7 +54,6 @@ var guess;
 var numGuesses = 0;
 var guesses = new Set();
 var descHidden = true;
-var media = window.matchMedia("(max-width: 480px)");
 
 if(localStorage.getItem("guesses") == null){
     localStorage.setItem("answer", randomCat);
@@ -260,6 +259,7 @@ function updateTable(guess) {
             traitImg.alt = catData[guess].data.trait[i];
             traitImg.style.display = "in-line block";
             traitImg.style.margin = "0 auto";
+            traitImg.style.width = "20%";
             cells[4].appendChild(traitImg);
         }
 

@@ -3,44 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wordle Cats</title>
+    <link rel="preload" href="images/bg_heavenlyTower.webp" as="image">
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css" rel="Stylesheet">
-    <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js" ></script>
     <script type="json" src="catList.json"></script>
 
 </head>
-<body>
-    <img id="logo" src="images/site_logo.png" alt="logo">
-    <div class="inputDiv" id="inputDiv">
+
+<body id="body">
+    <img id="logo" src="images/site_logo.png" alt="logo" style="display:none">
+    <div class="inputDiv" id="inputDiv" style="display:none">
         <p id="inputBlock">
-            <input type="text" id="catInput" name="cat" size="10" placeholder= "Enter a Cat"/>
-            <input type="submit" id="submitBtn" />
+            <input type="hidden" id="catInput" name="cat" size="10" placeholder= "Enter a Cat"/>
+            <input type="hidden" id="submitBtn" class="animatedButton" />
         </p>
     </div>
-    <div class="hint">
-        <input id="descHint" type="hidden" value="Description (click to reveal)"/>
-        <textarea readonly id="desc" style="display: none;"></textarea>
-    </div>
-    <div class="newCatDiv">
-        <input id="newCatBtn" type="hidden" value="Click for new cat"/>
+    <p id="time"></p>
+    <div class="hint" id="hintDiv" style="display:none">
+        <input id="descHint" class="animatedButton" type="button" value="Description
+Click to Reveal "/> <!---this is scuffed-->
+        <input id="imgHint" class="animatedButton" type="button" value="Blurred Image
+Click to Reveal"/> <!---this is scuffed-->
+        <div  class="hintBox">
+            <textarea readonly id="desc" style="display: none;"></textarea>
+            <img id="blurredAnswer">
+        </div>
+        
     </div>
     <div class="tableDiv" style="overflow: auto;">
         <br>
-        <table id="table" class="table" cellspacing="10" cellpadding="5" > 
+        <table id="table" class="table" cellspacing="10" cellpadding="5" style="display:none"> 
             <tr id="row"><th id="nameCell">Cat</th><th style="border:1px solid white">Rarity</th>
             <th style="border:1px solid white; min-width: 65px;">Cost</th><th style="border:1px solid white">Range</th>
             <th style="border:1px solid white">Target</th><th id="traitCell" style="border:1px solid white;">Trait</th>
-            <th style="border:1px solid white; width: 205px; min-width: 205px">Ability</th><th style="border:1px solid white">Form</th></tr>
+            <th style="border:1px solid white;  width: 205px; min-width: 205px">Ability</th><th style="border:1px solid white">Form</th></tr>
         </table>
     </div>
-    <div class="rulesDiv">
+    <div class="rulesDiv" style="display:none" id="rulesDiv">
         <div class="speechDiv">
-            <input id="rulesBtn" type="button" value="Rules">
+            <input id="rulesBtn" type="button" value="Rules" class="animatedButton">
         </div>
-        <img id="gamatoto" src="images/Gamatoto.png" alte="Gamatoto">
+        <img id="gamatoto" src="images/Gamatoto.png" alt="Gamatoto">
     </div>
     <div class="popup" id="popup">
         <ul id="rules">
@@ -56,23 +69,25 @@
                 <li>A red background means no part of the stat is identical, but arrows on the range and cost will show you if the answer is higher or lower</li>
             </ul>
             <br>
-            <li>Additionally, an optional hint will appear after 7 guesses that you can click to see the description of target cat</li>
+            <li>Additionally, hints will be available after a certain number of guesses to help identify the target cat</li>
             <br>
             <li>Credits:</li>
             <ul>
                 <li>Made by <a style="color: yellow; text-decoration: underline;" href="https://github.com/DavidCatan">DavidCatan</a></li>
-                <li>This game is heavily inspired the game Terradle by cxhuy (<a style="color: yellow;" href="https://www.terradle.com/">https://www.terradle.com/</a>)</li>
-                <li>All images were obtained from The Battle Cats Wiki (<a style="color: yellow;" href="https://battle-cats.fandom.com/wiki/Battle_Cats_Wiki">https://battle-cats.fandom.com/wiki/Battle_Cats_Wiki</a>)</li>
+                <li>This game is heavily inspired by the game Terradle by cxhuy (<a style="color: yellow;" href="https://www.terradle.com/">https://www.terradle.com/</a>)</li>
+                <li>All images were obtained from The Battle Cats Wiki (<a style="color: yellow;" href="https://battlecats.miraheze.org/wiki/Battle_Cats_Wiki">https://battle-cats.fandom.com/wiki/Battle_Cats_Wiki</a>)</li>
                 <li>Ponos Socials</li>
                 <ul>
                     <li><a style="color: yellow; text-decoration: underline;" href="https://www.facebook.com/ponosgames/">Facebook</a></li>
                     <li><a style="color: yellow; text-decoration: underline;" href="https://x.com/PONOS_EN">Twitter</a></li>
                     <li><a style="color: yellow; text-decoration: underline;" href="https://www.instagram.com/battlecatsofficial/?hl=en">Instagram</a></li>
+                    <input type="button" id="okBtn" value="Ok" class="animatedButton">
+
                 </ul>
             </ul>
-        </ul>
-        <input type="button" id="okBtn" value="Ok">
+        </ul>        
     </div>
+    <div class="blackout" id="blackout"></div>
     
 
     <script src="app.js" type="Module"></script>

@@ -519,7 +519,6 @@ $( function() {
 */
 
 function animateGreen(cell){
-    cell.style.backgroundColor = "green";
     $( cell ).animate({
         backgroundColor: "green",
         width: CELL_WIDTH
@@ -528,7 +527,6 @@ function animateGreen(cell){
 }
 
 function animateRed(cell){
-    cell.style.backgroundColor = "red";
     $( cell ).animate({
         backgroundColor: "red",
         width: CELL_WIDTH
@@ -537,7 +535,6 @@ function animateRed(cell){
 }
 
 function animateYellow(cell){
-    cell.style.backgroundColor = "yellow";
     $( cell ).animate({
         backgroundColor: "yellow",
         width: CELL_WIDTH

@@ -73,22 +73,22 @@ const lightOrange = window.getComputedStyle(document.body).getPropertyValue('--l
 inputText.type = "text";
 submitText.type = "submit";
 
-if (localStorage.getItem("table") != null){
+/*if (localStorage.getItem("table") != null){
     table.innerHTML = localStorage.getItem("table");
 }
 
-$(table).fadeIn(1000); // fade in table for smooth loading
+$(table).fadeIn(1000); // fade in table for smooth loading*/
 
-if(localStorage.getItem("win") == "true"){
+/*if(localStorage.getItem("win") == "true"){
     endScreen();
-}
+}*/
 
 if(localStorage.getItem("guesses") != null){
     JSON.parse(localStorage.getItem("guesses")).forEach(
         (guess) => {
             guesses.add(guess);
             numGuesses++;
-            //updateTable(guess); //update table with previous guessses
+            updateTable(guess); //update table with previous guessses
         }
     );
 }
@@ -179,11 +179,11 @@ function hideRules(){
     blackout.style.display = "none";
 }
 
-function saveTable(){
+/*function saveTable(){
     if (localStorage.getItem("guesses") != null){
         localStorage.setItem("table",table.innerHTML);
     }
-}
+}*/
 
 function reset() {
     window.location.reload();
@@ -201,7 +201,7 @@ function getInput() {
     localStorage.setItem("guesses", (JSON.stringify(Array.from(guesses))));
     numGuesses++;
     updateTable(guess);
-    saveTable();
+    //saveTable();
     inputText.value='';
     // remove guess from autocomplete
     nameSource.splice(nameSource.indexOf(guess),1);

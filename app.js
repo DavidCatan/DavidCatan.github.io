@@ -91,7 +91,13 @@ await fetch('catList.json')
             nameSource.push(catData[key].data.name);
             nameSet.add(catData[key].data.name);
         }
-        randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
+        if(localStorage.getItem("win") != "true"){
+            randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
+            localStorage.setItem("answer", randomCat);
+        }
+        else{
+            randomCat = localStorage.getItem("answer");
+        }
     })
     .catch(error => {
         alert(error + "\nThere was an error in fetching data for " + randomCat + ". Please refresh the page and try again");

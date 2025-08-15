@@ -5,15 +5,6 @@
     Data to add:
     
 */
-
-// show elements on page open, maybe makes loading a bit smoother artificially
-document.getElementById("hintDiv").style.display="block";
-document.getElementById("inputDiv").style.display="flex";
-document.getElementById("logo").style.display="block";
-document.getElementById("rulesDiv").style.display="block";
-
-
-
 var nameSource = new Array(); // source of names
 var nameSet = new Set(); // set of names to check guesses with
 

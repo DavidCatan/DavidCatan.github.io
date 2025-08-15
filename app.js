@@ -91,7 +91,7 @@ await fetch('catList.json')
             nameSource.push(catData[key].data.name);
             nameSet.add(catData[key].data.name);
         }
-        if(localStorage.getItem("win") != "true"){
+        if(localStorage.getItem("guesses") == null){
             randomCat = nameSource[Math.floor(Math.random() * nameSource.length)];
             localStorage.setItem("answer", randomCat);
         }

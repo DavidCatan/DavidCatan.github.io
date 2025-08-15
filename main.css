@@ -71,6 +71,10 @@ img {
     color: white;
 }
 
+.newCatDiv{
+    text-align: center; 
+}
+
 .hint{
     text-align: center; 
 }

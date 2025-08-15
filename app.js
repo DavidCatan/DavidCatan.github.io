@@ -83,18 +83,6 @@ $(table).fadeIn(1000); // fade in table for smooth loading*/
     endScreen();
 }*/
 
-if(localStorage.getItem("guesses") != null){
-    JSON.parse(localStorage.getItem("guesses")).forEach(
-        (guess) => {
-            guesses.add(guess);
-            numGuesses++;
-            updateTable(guess); //update table with previous guessses
-        }
-    );
-}
-
-updateHints();  
-
 await fetch('catList.json')
     .then(response => response.json())
     .then(catList => {
@@ -109,6 +97,20 @@ await fetch('catList.json')
         alert(error + "\nThere was an error in fetching data for " + randomCat + ". Please refresh the page and try again");
         localStorage.clear();
 });
+
+if(localStorage.getItem("guesses") != null){
+    JSON.parse(localStorage.getItem("guesses")).forEach(
+        (guess) => {
+            guesses.add(guess);
+            numGuesses++;
+            updateTable(guess); //update table with previous guessses
+        }
+    );
+}
+
+updateHints();  
+
+
 
 /*const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));

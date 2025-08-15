@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,16 @@
 
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3BFY274C61"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3BFY274C61');
+</script>
+
 <body id="body">
     <img id="logo" src="images/site_logo.png" alt="logo" style="display:none">
     <div class="inputDiv" id="inputDiv" style="display:none">
@@ -38,6 +49,9 @@ Click to Reveal"/> <!---this is scuffed-->
             <textarea readonly id="desc" style="display: none;"></textarea>
             <img id="blurredAnswer">
         </div>
+    <div class="animatedButton">
+        <input id="newCatBtn" type="hidden" value="Click for new cat"/>
+    </div>
         
     </div>
     <div class="tableDiv" style="overflow: auto;">
@@ -94,3 +108,5 @@ Click to Reveal"/> <!---this is scuffed-->
     <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
 </html>
+
+

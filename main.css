@@ -66,21 +66,9 @@ img {
     color: white;
 }
 
-
-#time{
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    border: 2px solid white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    background-image: linear-gradient(gray,black);
+#newCatBtn{
+    margin-top: 20px;
     color: white;
-    font-family: Comic Sans MS;
-    font-size: 15px;
-    box-shadow: 0 0 2px 4px black;
 }
 
 .hint{

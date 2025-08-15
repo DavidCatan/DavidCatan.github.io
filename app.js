@@ -34,7 +34,6 @@ var inputDiv = document.getElementById("inputDiv");
 var desc = document.getElementById("desc");
 var popup = document.getElementById("popup");
 var blackout = document.getElementById("blackout");
-var remainingTime = document.getElementById("time");
 
 
 submitText.addEventListener('click', getInput);
@@ -492,7 +491,7 @@ function endScreen() {
     descHint.style.color = "white";
     imgHint.style.backgroundImage = `linear-gradient(${lightOrange},${orange})`;
     imgHint.style.color = "white";
-    remainingTime.style.display = "block";
+    localStorage.clear();
 }
 
 // make every word with more than two letters have dashes for characters past 2nd letter

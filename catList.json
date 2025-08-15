@@ -317,7 +317,7 @@
                 "name": "Titan Cat",
                 "rarity": "Normal",
                 "cost": 1950,
-                "range": 400,
+                "range": 150,
                 "target": "Area",
                 "trait": ["None"],
                 "ability": ["None"],
@@ -330,7 +330,7 @@
                 "name": "Mythical Titan Cat",
                 "rarity": "Normal",
                 "cost": 1950,
-                "range": 400,
+                "range": 150,
                 "target": "Area",
                 "trait": ["None"],
                 "ability": ["None"],
@@ -343,7 +343,7 @@
                 "name": "Jamiera Cat",
                 "rarity": "Normal",
                 "cost": 1950,
-                "range": 400,
+                "range": 150,
                 "target": "Area",
                 "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "Traitless"],
                 "ability": ["Knockback"],
@@ -845,9 +845,9 @@
                 "description": "Dreaming of the skies, he allowed the Cat Army\nengineers to install top-class tech in his body.\nKnocks back Black enemies once in a while."
             }
         },
-        "Robocat Cat": {
+        "Robocat": {
             "data": {
-                "name": "Robocat Cat",
+                "name": "Robocat",
                 "rarity": "Rare",
                 "cost": 510,
                 "range": 345,
@@ -1939,7 +1939,7 @@
         },
         "The Kitty of Liberty": {
             "data": {
-                "name": "the Kitty of Liberty",
+                "name": "The Kitty of Liberty",
                 "rarity": "Super Rare",
                 "cost": 825,
                 "range": 320,
@@ -2821,6 +2821,45 @@
                 "description": "Mysterious Cat that awoke its deepest mental faculties\nwith harsh training. Wields fire & wind. Colossus Slayer\nstrong against Red/Angels, sometimes Knockback."
             }
         },
+        "Immortal Master Tengu": {
+            "data": {
+                "name": "Immortal Master Tengu",
+                "rarity": "Uber Rare",
+                "cost": 3600,
+                "range": 400,
+                "target": "Area",
+                "trait": ["Red", "Angel"],
+                "ability": ["Strong Against", "Knockback", "Colossus Slayer", "Wave Immunity", "Weaken Immunity", "Strengthen"],
+                "form": "True",
+                "description": "Rains down cataclysm from above, earning both\nfear and adoration from the people. Colossus\nSlayer, Strong vs Red/Angels, may Knockback."
+            }
+        },
+        "Dynasaurus Cat": {
+            "data": {
+                "name": "Dynasaurus Cat",
+                "rarity": "Uber Rare",
+                "cost": 4200,
+                "range": 350,
+                "target": "Area",
+                "trait": ["Angel"],
+                "ability": ["Long Distance", "Massive Damage", "Conjure", "Knockback Immunity"],
+                "form": "Normal",
+                "description": "The top of the food chain, revived thanks to a Cat.\nIts scorching hot breath razes the land down to ash.\nConjurer, Massive damage to Angels (Long-range/Area)"
+            }
+        },
+        "Mecha Dynasaurus Cat": {
+            "data": {
+                "name": "Mecha Dynasaurus Cat",
+                "rarity": "Uber Rare",
+                "cost": 4200,
+                "range": 350,
+                "target": "Area",
+                "trait": ["Angel"],
+                "ability": ["Long Distance", "Massive Damage", "Conjure", "Knockback Immunity"],
+                "form": "Evolved",
+                "description": "The top of the food chain, revived thanks to a Cat.\nIts scorching hot breath razes the land down to ash.\nConjurer, Massive damage to Angels (Long-range/Area)"
+            }
+        },
         "Balaluga": {
             "data": {
                 "name": "Balaluga",
@@ -3198,6 +3237,32 @@
                 "description": "Someone tell me - how can this be?!\nSeems like this one has 100% chance of\nMini-Surge with occasional Knockback."
             }
         },
+        "Mamoluga": {
+            "data": {
+                "name": "Mamoluga",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 140,
+                "target": "Single",
+                "trait": ["None"],
+                "ability": ["None"],
+                "form": "Normal",
+                "description": "Not sure if this is a Cat...\nThere's just something about\nthat stout torso..."
+            }
+        },
+        "Mamolan Pasalan": {
+            "data": {
+                "name": "Mamolan Pasalan",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 1400,
+                "target": "Area",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "Traitless", "MetalT"],
+                "ability": ["Weaken", "Conjure", "Knockback Immunity", "Warp Immunity"],
+                "form": "Evolved",
+                "description": "Why does it cover its eyes? Best not think about it.\nSeems like this one is a Conjurer\nwhose Area Attacks can Weaken enemies."
+            }
+        },
         "Sanada Yukimura": {
             "data": {
                 "name": "Sanada Yukimura",
@@ -3445,6 +3510,19 @@
                 "description": "Totally consumed by corruption. The only emotion\nremaining is the will to destruction. (Area Attacks)\nStrong vs + 100% knockback against Black."
             }
         },
+        "Hellrider Kenshin": {
+            "data": {
+                "name": "Hellrider Kenshin",
+                "rarity": "Uber Rare",
+                "cost": 5475,
+                "range": 445,
+                "target": "Area",
+                "trait": ["Black"],
+                "ability": ["Knockback", "Strong Against", "Mini-Wave"],
+                "form": "Ultra",
+                "description": "Erupts with a burning passion for slaughter. Nothing is\nleft in her wake after her charge into battle. Strong vs.\nBlack. Area attacks have Knockback and Mini-Waves."
+            }
+        },
         "Imagawa Yoshimoto": {
             "data": {
                 "name": "Imagawa Yoshimoto",
@@ -3588,6 +3666,19 @@
                 "description": "Peerless assassin who cuts down targets with godspeed,\nunleashing the power of his cursed blade. Colossus\nSlayer, massive damage to Black/Floating, 100% Freeze."
             }
         },
+        "Immortal Hanzo": {
+            "data": {
+                "name": "Immortal Hanzo",
+                "rarity": "Uber Rare",
+                "cost": 5325,
+                "range": 450,
+                "target": "Area",
+                "trait": ["Black", "Floating"],
+                "ability": ["Massive Damage", "Freeze", "Colossus Slayer", "Freeze Immunity", "Slow Immunity"],
+                "form": "True",
+                "description": "The hellfire which spews from his cursed blade can\nturn entire armies to ash in one strike. Colossus Slayer,\ndeals Massive damage to Floating, Black, 100% Freeze."
+            }
+        },
         "Akechi Mitsuhide": {
             "data": {
                 "name": "Akechi Mitsuhide",
@@ -3703,6 +3794,19 @@
                 "ability": ["Massive Damage"],
                 "form": "True",
                 "description": "When you have a goddess' body, it's tough to find\nclothes that fit. Long distance Area Attacks\ndeliver massive damage to Red enemies."
+            }
+        },
+        "Ultimate Thundia": {
+            "data": {
+                "name": "Ultimate Thundia",
+                "rarity": "Uber Rare",
+                "cost": 4410,
+                "range": 460,
+                "target": "Area",
+                "trait": ["Red"],
+                "ability": ["Massive Damage", "Long Distance", "Survive", "Slow Immunity", "Weaken Immunity"],
+                "form": "Ultra",
+                "description": "Her popularity skyrocketed after a combat glow-up.\nCalls down long-range Area thunder attacks that\ndeal Massive damage to Red enemies."
             }
         },
         "Kuu": {
@@ -4433,6 +4537,19 @@
                 "description": "A dragon housing the unrelenting power of the raging\nseas. Destroys foes with overwhelming power.\nArea attacks Slow Floating/Angels, Colossus Slayer."
             }
         },
+        "God-Emperor Daliasan": {
+            "data": {
+                "name": "God-Emperor Daliasan",
+                "rarity": "Uber Rare",
+                "cost": 6000,
+                "range": 510,
+                "target": "Area",
+                "trait": ["Floating", "Angel"],
+                "ability": ["Long Distance", "Slow", "Colossus Slayer", "Knockback Immunity", "Savage Blow"],
+                "form": "True",
+                "description": "Wields the blistering heat of an undersea volcano, with\nferocious strikes that divide the very oceans in twain.\nRanged strikes Slow Floating/Angels. Colossus Slayer."
+            }
+        },
         "Gunduros": {
             "data": {
                 "name": "Gunduros",
@@ -4574,6 +4691,19 @@
                 "ability": ["Knockback", "Freeze"],
                 "form": "True",
                 "description": "He has reached the edge of the universe and\nseen the truth. Area attacks have 100% chance\nof knockback & freeze vs Floating/Angels."
+            }
+        },
+        "Supernova Cosmo": {
+            "data": {
+                "name": "Supernova Cosmo",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 850,
+                "target": "Area",
+                "trait": ["Floating", "Angel"],
+                "ability": ["Knockback", "Freeze", "Omni Strike", "Wave Attack", "Sage Slayer"],
+                "form": "Ultra",
+                "description": "A Cat rumored to have traveled through a great number\nof black holes. Sage Slayer, Omnistrikes unleash\nWaves to Knockback/Freeze Angels and Floating"
             }
         },
         "Kasa Jizo": {
@@ -4847,6 +4977,45 @@
                 "ability": ["Massive Damage", "Surge Immunity", "Omni Strike"],
                 "form": "Evolved",
                 "description": "A skilled agent who rescued a beautiful spy from the\norganization ONI and escaped with their submarine.\nDeals Massive damage to Traitless and Angels."
+            }
+        },
+        "Oni Battlepod Kozuchimaru": {
+            "data": {
+                "name": "Oni Battlepod Kozuchimaru",
+                "rarity": "Uber Rare",
+                "cost": 3450,
+                "range": 150,
+                "target": "Area",
+                "trait": ["Angel", "Traitless"],
+                "ability": ["Massive Damage", "Surge Immunity", "Omni Strike", "Freeze Immunity"],
+                "form": "True",
+                "description": "Modified submersible operated by a skilled agent.\nPunches through any barrier to meet their underground\nfixer. Deals Massive damage to Traitless/Angels."
+            }
+        },
+        "Hanasaka Cat": {
+            "data": {
+                "name": "Hanasaka Cat",
+                "rarity": "Uber Rare",
+                "cost": 765,
+                "range": 160,
+                "target": "Area",
+                "trait": ["Angel", "Zombie"],
+                "ability": ["Omni Strike", "Freeze", "Resistant", "Zombie Killer"],
+                "form": "Normal",
+                "description": "Learned the value of life caring for a beloved dog.\nWields magics causing colossal flowers to bloom.\nOmnistrike. Tough vs. Angels and Zombies."
+            }
+        },
+        "Ravenous Cherry": {
+            "data": {
+                "name": "Ravenous Cherry",
+                "rarity": "Uber Rare",
+                "cost": 4800,
+                "range": 230,
+                "target": "Area",
+                "trait": ["Angel", "Zombie"],
+                "ability": ["Omni Strike", "Freeze", "Resistant", "Zombie Killer", "Conjure"],
+                "form": "Evolved",
+                "description": "Consumed the unknown nutrient POCH-1, inflicting it\nwith an unending appetite. Devours anything in its path.\nConjurer, Tough vs. Angels and Zombies (Omnistrike)"
             }
         },
         "Akira": {
@@ -5135,6 +5304,19 @@
                 "description": "Realized his true power after bringing the corrupt\narchdemons to justice. Time for the final judgment!\nWave attacks 100% Freeze Zombies."
             }
         },
+        "Arcane Commissioner Gravicci": {
+            "data": {
+                "name": "Arcane Commissioner Gravicci",
+                "rarity": "Uber Rare",
+                "cost": 4410,
+                "range": 360,
+                "target": "Area",
+                "trait": ["Zombie"],
+                "ability": ["Freeze", "Wave Attack", "Strong Against", "Zombie Killer", "Sage Slayer", "Wave Immunity"],
+                "form": "Ultra",
+                "description": "Genius investigator who discovered that heavenly might\nruns in his blood after a hard-fought battle. Sage Slayer,\nStrong vs. Zombies, Wave attacks 100% Freeze"
+            }
+        },
         "Sharpshooter Saki": {
             "data": {
                 "name": "Sharpshooter Saki",
@@ -5237,6 +5419,45 @@
                 "ability": ["Knockback", "Freeze Immunity"],
                 "form": "Evolved",
                 "description": "Has now awakened to his spiritual powers thanks to\nelectricity. Solves the 7 mysteries of his school in the\ndead of night. Might Knockback Aliens and Zombies."
+            }
+        },
+        "Lightning Jack": {
+            "data": {
+                "name": "Lightning Jack",
+                "rarity": "Uber Rare",
+                "cost": 3150,
+                "range": 250,
+                "target": "Single",
+                "trait": ["Zombie", "Aku"],
+                "ability": ["Knockback", "Surge Immunity"],
+                "form": "True",
+                "description": "Boosted his voltage via a science experiment to\nambush campus intruders with an electric tackle.\nMight Knockback Aliens and Aku."
+            }
+        },
+        "Mech Patrol Axel": {
+            "data": {
+                "name": "Mech Patrol Axel",
+                "rarity": "Uber Rare",
+                "cost": 4200,
+                "range": 450,
+                "target": "Area",
+                "trait": ["Alien", "MetalT"],
+                "ability": ["Long Distance", "Knockback", "Slow", "Weaken", "Conjure"],
+                "form": "Normal",
+                "description": "Cyborg lawman tasked with reducing street crime to\nzero - by any means. Conjurer, Long-range attacks\nmay Knockback/Slow/Weaken Aliens and Metal."
+            }
+        },
+        "Steel Sergeant Axel": {
+            "data": {
+                "name": "Steel Sergeant Axel",
+                "rarity": "Uber Rare",
+                "cost": 4200,
+                "range": 450,
+                "target": "Area",
+                "trait": ["Alien", "MetalT"],
+                "ability": ["Long Distance", "Freeze", "Conjure", "Metal Killer", "Warp Immunity"],
+                "form": "Evolved",
+                "description": "Hard-boiled special ops leader who turns street\nracer cars into scrap metal. Conjurer/Metal Killer.\nMay Freeze Aliens/Metal with Long-range attacks."
             }
         },
         "Thunder God Zeus": {
@@ -5616,6 +5837,45 @@
                 "description": "One of the nine gods of Heliopolis with unmatched\narcane power, purifying evil with Godly Wings of Life\nand Death. Colossus Slayer, 100% Wave Attack."
             }
         },
+        "Almighty Aset": {
+            "data": {
+                "name": "Almighty Aset",
+                "rarity": "Uber Rare",
+                "cost": 4350,
+                "range": 350,
+                "target": "Area",
+                "trait": ["None"],
+                "ability": ["Wave Attack", "Strengthen", "Colossus Slayer", "Freeze Immunity", "Toxic Immunity"],
+                "form": "True",
+                "description": "One of the nine gods of Heliopolis with superior\narcane powers that bestow life unto the dead.\nColossus Slayer, 100% chance of Wave Attack."
+            }
+        },
+        "Victorious Skanda": {
+            "data": {
+                "name": "Victorious Skanda",
+                "rarity": "Uber Rare",
+                "cost": 4050,
+                "range": 200,
+                "target": "Area",
+                "trait": ["Red", "Angel", "Alien"],
+                "ability": ["Wave Attack", "Weaken", "Conjure", "Sage Slayer"],
+                "form": "Normal",
+                "description": "One of the Eight Generals of the Pure Realm.\nA Conjurer and Sage Slayer who unleashes Waves\nthat always Weaken Red, Angel and Alien enemies."
+            }
+        },
+        "Zeta Skanda": {
+            "data": {
+                "name": "Zeta Skanda",
+                "rarity": "Uber Rare",
+                "cost": 4050,
+                "range": 200,
+                "target": "Area",
+                "trait": ["Red", "Angel", "Alien"],
+                "ability": ["Wave Attack", "Weaken", "Conjure", "Sage Slayer"],
+                "form": "Evolved",
+                "description": "His heavenly blade cuts down demons with panache.\nA Conjurer and Sage Slayer who unleashes Waves\nthat always Weaken Red, Angel and Alien enemies."
+            }
+        },
         "Mighty Kat-A-Pult": {
             "data": {
                 "name": "Mighty Kat-A-Pult",
@@ -5707,6 +5967,19 @@
                 "description": "A force of total aerial domination and a key weapon\nin the Cat's quest to create an ideal world.\nArea attacks have powerful knockback vs Zombies."
             }
         },
+        "NEK-03 Cloud Emperor": {
+            "data": {
+                "name": "NEK-03 Cloud Emperor",
+                "rarity": "Uber Rare",
+                "cost": 4950,
+                "range": 450,
+                "target": "Area",
+                "trait": ["Zombie"],
+                "ability": ["Knockback", "Zombie Killer", "Omni Strike", "Sage Slayer", "Explosion", "Explosion Immunity"],
+                "form": "Ultra",
+                "description": "Patrols the open skies like a steel hawk to keep the\npeace. Sage Slayer Omnistrikes have 100% chance\nto Knockback Zombies and might cause Explosions."
+            }
+        },
         "Mighty Drednot": {
             "data": {
                 "name": "Mighty Drednot",
@@ -5733,17 +6006,17 @@
                 "description": "Boasting a complement of elite marines and a\ndrill able to punch through any hull, the Lionheart\ndelivers huge area damage vs Reds and Zombies."
             }
         },
-        "B.C.S. Tigerclaw": {
+        "B.C.S. Beartooth": {
             "data": {
-                "name": "B.C.S. Tigerclaw",
+                "name": "B.C.S. Beartooth",
                 "rarity": "Uber Rare",
                 "cost": 4800,
-                "range": 440,
+                "range": 480,
                 "target": "Area",
                 "trait": ["Zombie", "Red"],
-                "ability": ["Massive Damage", "Zombie Killer"],
-                "form": "True",
-                "description": "Cat Army Special Forces use this Nekonium drill-\nequipped destroyer to stage marine assaults.\nHuge area damage vs Reds and Zombies."
+                "ability": ["Massive Damage", "Zombie Killer", "Knockback Immunity"],
+                "form": "Ultra",
+                "description": "Unsinkable destroyer that has seen endless sea\nbattle. Protects the seven seas even after war's end.\nHuge Area damage vs Red and Zombies."
             }
         },
         "Mighty Rekon Korps": {
@@ -5967,6 +6240,32 @@
                 "description": "Next-gen tactical vehicles transporting scouts and\nconducting raids on enemy camps. Omnistrike might\nWeaken, Tough vs Red/Metal/Zombies"
             }
         },
+        "Mighty Morta-Loncha": {
+            "data": {
+                "name": "Mighty Morta-Loncha",
+                "rarity": "Uber Rare",
+                "cost": 4650,
+                "range": 465,
+                "target": "Area",
+                "trait": ["Zombie", "Aku"],
+                "ability": ["Zombie Killer", "Freeze", "Conjure", "Explosion", "Toxic Immunity", "Surge Immunity"],
+                "form": "Normal",
+                "description": "Experimental weapon developed to oppose an ancient\nempire. Launches attacks in a parabolic arc. Conjurer,\nmay Freeze Zombies and Aku with Explosion attacks."
+            }
+        },
+        "Grandiose Gunhauzer": {
+            "data": {
+                "name": "Grandiose Gunhauzer",
+                "rarity": "Uber Rare",
+                "cost": 4650,
+                "range": 465,
+                "target": "Area",
+                "trait": ["Zombie", "Aku"],
+                "ability": ["Zombie Killer", "Freeze", "Conjure", "Explosion", "Toxic Immunity", "Surge Immunity"],
+                "form": "Evolved",
+                "description": "Developed as a last resort against an ancient army.\nRepels foes with optimized cannonballs. Conjurer,\nmay Freeze Zombies/Aku with Explosion attacks"
+            }
+        },
         "Bora": {
             "data": {
                 "name": "Bora",
@@ -6004,6 +6303,19 @@
                 "ability": ["Massive Damage", "Warp Immunity", "Resistant", "Barrier Breaker"],
                 "form": "True",
                 "description": "Carries a red giant's rage within its tiny body,\nready to unleash a supernova on enemy Barriers.\nPowerful defense & attack vs. Aliens"
+            }
+        },
+        "Bazifenix": {
+            "data": {
+                "name": "Bazifenix",
+                "rarity": "Uber Rare",
+                "cost": 3780,
+                "range": 430,
+                "target": "Area",
+                "trait": ["Alien"],
+                "ability": ["Massive Damage", "Warp Immunity", "Resistant", "Barrier Breaker", "Weaken"],
+                "form": "Ultra",
+                "description": "Supreme fire spirit traveling the galaxy to breathe\na new spark of life into dying stars. Resists Aliens,\nMassive Damage, 100% Weaken, Barrier Break."
             }
         },
         "Mizli": {
@@ -6240,6 +6552,19 @@
                 "description": "Commanding frost that freezes all matter around\nit, this spirit shatters Barriers with vicious icicles.\nColossus Slayer, tough vs & 100% Slows Aliens & Zombies."
             }
         },
+        "Blizarena": {
+            "data": {
+                "name": "Blizarena",
+                "rarity": "Uber Rare",
+                "cost": 3630,
+                "range": 350,
+                "target": "Area",
+                "trait": ["Alien", "Zombie"],
+                "ability": ["Omni Strike", "Slow", "Zombie Killer", "Colossus Slayer", "Slow Immunity", "Warp Immunity", "Resistant", "Toxic Immunity"],
+                "form": "True",
+                "description": "Freezes scorching hot stars to their very core.\nHer absolute-zero pillars of ice pierce Barriers.\nColossus Slayer, Tough vs/100% Slows Aliens/Zombies."
+            }
+        },
         "Tekachi": {
             "data": {
                 "name": "Tekachi",
@@ -6448,6 +6773,32 @@
                 "description": "A mystical Cat that burns with the fires of fate.\nSworn to protect humanity until their dying breath.\nMassive damage to Traited (Long-Range Area Atk.)"
             }
         },
+        "Celestial Child Luna": {
+            "data": {
+                "name": "Celestial Child Luna",
+                "rarity": "Uber Rare",
+                "cost": 975,
+                "range": 200,
+                "target": "Area",
+                "trait": ["Red", "Alien", "Zombie", "Relic"],
+                "ability": ["Omni Strike", "Strong Against", "Freeze", "Zombie Killer", "Explosion", "Curse Immunity", "Explosion Immunity"],
+                "form": "Normal",
+                "description": "Precocious youth dancing about the heavens as she\npleases, unaware of her destiny. Strong vs Red, Alien,\nZombie and Relics. Explosions have chance to Freeze."
+            }
+        },
+        "Salvation's Daughter Lunacia": {
+            "data": {
+                "name": "Salvation's Daughter Lunacia",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 400,
+                "target": "Area",
+                "trait": ["Red", "Alien", "Zombie", "Relic"],
+                "ability": ["Omni Strike", "Strong Against", "Freeze", "Zombie Killer", "Explosion", "Curse Immunity", "Explosion Immunity", "Wave Shield"],
+                "form": "Evolved",
+                "description": "Heavenly youth cast into exile by cruel fate, granting\npeace unto Catkind. Strong vs Red/Alien/Zombie/Relics,\nExplosions 100% Freeze. Also blocks Wave attacks."
+            }
+        },
         "Shadow Gao": {
             "data": {
                 "name": "Shadow Gao",
@@ -6630,6 +6981,58 @@
                 "description": "A mysterious Cat that revived from ash with raging\nflames. Severs the ring of fate with its power of hatred.\n100% Slow, Long-range Area Mini-Surge"
             }
         },
+        "Netherworld Nymph Lunacia": {
+            "data": {
+                "name": "Netherworld Nymph Lunacia",
+                "rarity": "Uber Rare",
+                "cost": 3750,
+                "range": 350,
+                "target": "Area",
+                "trait": ["Traitless", "Floating", "Angel", "Aku"],
+                "ability": ["Omni Strike", "Strong Against", "Weaken", "Shield Piercing", "Counter-Surge", "Explosion", "Freeze Immunity", "Slow Immunity", "Curse Immunity", "Toxic Immunity", "Explosion Immunity"],
+                "form": "Normal",
+                "description": "Another avatar of mercy guiding forlorn Cats to\nredemption. Strong vs. and Weakens Floating/Angels/\nAku/Traitless. Omnistrikes/Surge cause Explosions."
+            }
+        },
+        "Death's Daughter Lunacia": {
+            "data": {
+                "name": "Death's Daughter Lunacia",
+                "rarity": "Uber Rare",
+                "cost": 3750,
+                "range": 350,
+                "target": "Area",
+                "trait": ["Traitless", "Floating", "Angel", "Aku"],
+                "ability": ["Omni Strike", "Strong Against", "Weaken", "Shield Piercing", "Counter-Surge", "Explosion", "Freeze Immunity", "Slow Immunity", "Curse Immunity", "Toxic Immunity", "Explosion Immunity"],
+                "form": "Evolved",
+                "description": "Devoted to the salvation of all others, even at the cost of\nher own. Strong vs. and Weakens Floating/Angels/Aku/\bTraitless. Omnistrikes/Surge cause Explosions."
+            }
+        },
+        "Princess Cat": {
+            "data": {
+                "name": "Princess Cat",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 551,
+                "target": "Area",
+                "trait": ["Red", "Angel", "Zombie"],
+                "ability": ["Mini-Wave", "Weaken", "Zombie Killer", "Curse Immunity"],
+                "form": "Normal",
+                "description": "In a hidden Cat Kingdom, a 9-year old genius\nhas memorized the entirely of the royal libaries.\nWeakens Red, Angels, Zombies, with Mini-Wave."
+            }
+        },
+        "Empress Cat": {
+            "data": {
+                "name": "Empress Cat",
+                "rarity": "Uber Rare",
+                "cost": 4500,
+                "range": 551,
+                "target": "Area",
+                "trait": ["Red", "Angel", "Zombie"],
+                "ability": ["Mini-Wave", "Weaken", "Zombie Killer", "Curse Immunity"],
+                "form": "Evolved",
+                "description": "With her vast intellect (and forbidden spellbooks),\nshe has guided the Cat Kingdom to a golden age.\nWeakens Red, Angels, Zombies, with Mini-Wave."
+            }
+        },
         "Pai-Pai": {
             "data": {
                 "name": "Pai-Pai",
@@ -6745,6 +7148,19 @@
                 "ability": ["Slow", "Insanely Tough", "Critical", "Weaken", "Slow Immunity", "Weaken Immunity"],
                 "form": "True",
                 "description": "If you must deliver heaven's punishment, you might\nas well look really cute doing it. Might Critical, plus\nSlows, Weakens and Insanely tough vs Metal."
+            }
+        },
+        "Sacred Blade Sakura Z": {
+            "data": {
+                "name": "Sacred Blade Sakura Z",
+                "rarity": "Uber Rare",
+                "cost": 4200,
+                "range": 420,
+                "target": "Area",
+                "trait": ["MetalT"],
+                "ability": ["Slow", "Insanely Tough", "Critical", "Weaken", "Slow Immunity", "Weaken Immunity", "Omni Strike"],
+                "form": "Ultra",
+                "description": "Schoolgirl balancing a livestream schedule and\nsuper secret missions. Omnistrikes might\nCritical/Slow/Weaken, Insanely tough vs Metal."
             }
         },
         "Hell Warden Emma": {
@@ -7072,6 +7488,19 @@
                 "description": "She has sealed away her dark, unmentionable past\nand seeks redemption in the mortal plane.\nColossus Slayer, Strong against Traited enemies"
             }
         },
+        "Lady of Deception Vega": {
+            "data": {
+                "name": "Lady of Deception Vega",
+                "rarity": "Uber Rare",
+                "cost": 4680,
+                "range": 380,
+                "target": "Area",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "MetalT"],
+                "ability": ["Long Distance", "Strong Against", "Weaken", "Colossus Slayer", "Toxic Immunity", "Zombie Killer"],
+                "form": "True",
+                "description": "Charismatic goddess awakening to her true power,\nwielding online fame to lead her stans down a dark path.\nColossus Slayer, Strong vs. Traited enemies."
+            }
+        },
         "Ninja Girl Tomoe": {
             "data": {
                 "name": "Ninja Girl Tomoe",
@@ -7122,6 +7551,58 @@
                 "ability": ["Zombie Killer", "Barrier Breaker", "Wave Immunity", "Knockback Immunity", "Freeze Immunity", "Slow Immunity", "Weaken Immunity", "Warp Immunity", "Curse Immunity"],
                 "form": "Evolved",
                 "description": "Valkyrie's youngest sister. Nature itself has\nblessed her with command over all forces of\nthe Earth. Area atk might break Barriers."
+            }
+        },
+        "Trixi the Merc": {
+            "data": {
+                "name": "Trixi the Merc",
+                "rarity": "Uber Rare",
+                "cost": 3900,
+                "range": 280,
+                "target": "Area",
+                "trait": ["Traitless", "Alien", "Relic"],
+                "ability": ["Strong Against", "Freeze", "Slow Immunity", "Warp Immunity", "Curse Immunity"],
+                "form": "Normal",
+                "description": "Notorious sword-for-hire wielding a Muranyasa\ncharged blade, known to be Strong vs Relics, Alien\nand Traitless, and with Area Attacks that might Freeze."
+            }
+        },
+        "Trixi the Revenant": {
+            "data": {
+                "name": "Trixi the Revenant",
+                "rarity": "Uber Rare",
+                "cost": 3900,
+                "range": 280,
+                "target": "Area",
+                "trait": ["Traitless", "Alien", "Relic"],
+                "ability": ["Strong Against", "Freeze", "Slow Immunity", "Warp Immunity", "Curse Immunity"],
+                "form": "Evolved",
+                "description": "Betrayed by her crew and left in a coma for 10 years,\nnow hellbent on revenge. Strong vs Relics, Alien\nand Traitless, with Area Attacks that might Freeze."
+            }
+        },
+        "Koneko": {
+            "data": {
+                "name": "Koneko",
+                "rarity": "Uber Rare",
+                "cost": 148,
+                "range": 250,
+                "target": "Single",
+                "trait": ["Traitless", "Relic"],
+                "ability": ["Slow", "Critical", "Wave Attack", "Savage Blow", "Surge Attack", "Explosion", "Wave Immunity", "Curse Immunity"],
+                "form": "Normal",
+                "description": "Tomboyish Cat dreaming of being an idol adored by\ncrowds of fans. Performs her heart out on stage,\namassing more and more fans by the day."
+            }
+        },
+        "Superstar Koneko": {
+            "data": {
+                "name": "Superstar Koneko",
+                "rarity": "Uber Rare",
+                "cost": 2100,
+                "range": 450,
+                "target": "Single",
+                "trait": ["Traitless", "Relic"],
+                "ability": ["Slow", "Critical", "Wave Attack", "Savage Blow", "Surge Attack", "Explosion", "Wave Immunity", "Curse Immunity"],
+                "form": "Evolved",
+                "description": "An unexpected breakthrough hit pushed Koneko\nonto the path of becoming a star. Gives it all for her\nfans with passionate singing to show her gratitude."
             }
         },
         "Li'l Valkyrie Dark": {
@@ -7434,6 +7915,84 @@
                 "ability": ["Insanely Tough", "Weaken", "Barrier Breaker", "Slow Immunity", "Warp Immunity"],
                 "form": "Evolved",
                 "description": "Omniscient cosmic visionary from the future,\nmastery of all elements allows it to ignore Barriers.\nInsanely tough, 100% Weaken, Barrier Breaker."
+            }
+        },
+        "Daybreaker Izanagi": {
+            "data": {
+                "name": "Daybreaker Izanagi",
+                "rarity": "Legend Rare",
+                "cost": 4500,
+                "range": 350,
+                "target": "Single",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "MetalT"],
+                "ability": ["Long Distance", "Insane Damage", "Conjure", "Wave Immunity", "Freeze Immunity", "Curse Immunity"],
+                "form": "Normal",
+                "description": "The prelude to all that ever was, descended from a\nhigher plane. Manifests desires and Conjures to the\nbattlefield, Insane damage to Traited (Long-Range)"
+            }
+        },
+        "Dawnbringer Izanagi": {
+            "data": {
+                "name": "Dawnbringer Izanagi",
+                "rarity": "Legend Rare",
+                "cost": 4500,
+                "range": 350,
+                "target": "Single",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "MetalT"],
+                "ability": ["Long Distance", "Insane Damage", "Conjure", "Wave Immunity", "Freeze Immunity", "Curse Immunity"],
+                "form": "Evolved",
+                "description": "Silent observer of the ephemeral realms for eons.\nManifests desires and Conjures to the battlefield,\ndeals Insane damage to Traited (Long-Range)"
+            }
+        },
+        "Izanami of Dusk": {
+            "data": {
+                "name": "Izanami of Dusk",
+                "rarity": "Legend Rare",
+                "cost": 4650,
+                "range": 400,
+                "target": "Area",
+                "trait": ["Traitless"],
+                "ability": ["Long Distance", "Insane Damage", "Conjure", "Surge Immunity", "Freeze Immunity", "Curse Immunity"],
+                "form": "Normal",
+                "description": "The coda to all that ever was, descended from a\nhigher plane. Can conjure a Spirit to the battlefield,\nwith Long-Range Insane damage to Traitless"
+            }
+        },
+        "Izanami of Eventide": {
+            "data": {
+                "name": "Izanami of Eventide",
+                "rarity": "Legend Rare",
+                "cost": 4650,
+                "range": 400,
+                "target": "Area",
+                "trait": ["Traitless"],
+                "ability": ["Long Distance", "Insane Damage", "Conjure", "Surge Immunity", "Freeze Immunity", "Curse Immunity", "Savage Blow"],
+                "form": "Evolved",
+                "description": "Silent observer of the realms of the dead for eons.\nManifests their will and Conjures to the battlefield.\nLong-Range attacks deal Insane damage to Traitless"
+            }
+        },
+        "Emperor Cat": {
+            "data": {
+                "name": "Emperor Cat",
+                "rarity": "Legend Rare",
+                "cost": 4500,
+                "range": 551,
+                "target": "Area",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "MetalT"],
+                "ability": ["Knockback", "Freeze", "Slow", "Weaken"],
+                "form": "Normal",
+                "description": "By braving the ancient forest, he obtained peerless\nmagical power that allowed him to tame all of Catkind.\nArea atks inflict negative status on Traited enemies."
+            }
+        },
+        "Tyrant Cat": {
+            "data": {
+                "name": "Tyrant Cat",
+                "rarity": "Legend Rare",
+                "cost": 4500,
+                "range": 551,
+                "target": "Area",
+                "trait": ["Red", "Floating", "Black", "Angel", "Alien",  "Zombie", "Aku", "Relic", "MetalT"],
+                "ability": ["Knockback", "Freeze", "Slow", "Weaken"],
+                "form": "Evolved",
+                "description": "The uncanny magics came at an unseen cost, and\na piece of his soul is consumed with every battle.\nArea atks inflict negative status on Traited enemies."
             }
         }
     }
